@@ -5,7 +5,7 @@ copy_image()
     anne=$(exif -t 0x0132 -m $1 | cut -d ':' -f1)  
     annee2=$(exif -t 0x0132 -m $1 | cut -d ' ' -f1)
     mois=$(exif -t 0x0132 -m $1 | cut -d ':' -f2)
-    heure=$(exif -t 0x0132 -m $1 | cut -d ' ' -f1)
+    heure=$(exif -t 0x0132 -m $1 | cut -d ' ' -f1 | tr ':' '-')
 
     mkdir -p "$2/$anne/$mois"
 
